@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Transcription App</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('welcome')">Home</a></li>
+            <li><a href="#" onclick="showSection('login')">Log In</a></li>
+            <li><a href="#" onclick="showSection('upload')">Upload Video</a></li>
+            <li><a href="#" onclick="showSection('live')">Live Transcript</a></li>
+            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="welcome" class="container">
+    <h2>Welcome to Our App</h2>
+    <div class="options">
+        <button class="button" onclick="showSection('live')">Start Live Transcription</button>
+        <button class="button" onclick="showSection('upload')">Upload Video</button>
+        <button class="button" onclick="showSection('profile')">View Profile</button>
+    </div>
+</div>
+
+<div id="login" class="container">
+    <h2>Login</h2>
+    <div class="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button class="button" onclick="login()">Submit</button>
+        <button class="button" onclick="showSection('welcome')">Back</button>
+    </div>
+</div>
+
+<div id="upload" class="container">
+    <h2>Upload Video</h2>
+    <input type="file" id="videoUpload" accept="video/*">
+    <button class="button" onclick="uploadVideo()">Upload</button>
+    <button class="button" onclick="showSection('welcome')">Back</button>
+</div>
+
+<div id="live" class="container">
+    <h2>Live Transcription</h2>
+    <video id="videoElement" autoplay></video>
+    <div>
+        <button class="button" onclick="startRecording()">Start Recording</button>
+        <button class="button" onclick="stopRecording()">Stop Recording</button>
+    </div>
+    <button class="button" onclick="showSection('welcome')">Back</button>
+</div>
+
+<div id="profile" class="container">
+    <h2>User Profile</h2>
+    <p>Username: <span id="profile-username">Guest</span></p>
+    <button class="button" onclick="showSection('welcome')">Back</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 Transcription App. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
